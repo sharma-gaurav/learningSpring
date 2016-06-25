@@ -83,7 +83,7 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
     <bean class="com.spring.demo.Person">
-        <property name="name" value="Gaurav"/>
-        <property name="age" value="27"/>
+        <property name="name" value="Gaurav"></property>
+        <property name="age" value="27"></property>
     </bean>
 </beans>
