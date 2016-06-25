@@ -1,5 +1,8 @@
 package com.spring.demo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Database {
     String name;
     Integer port;
@@ -10,15 +13,6 @@ public class Database {
                 "name='" + name + '\'' +
                 ", port=" + port +
                 '}';
-    }
-
-    public Database(String name) {
-        this.name = name;
-    }
-
-    public Database(Integer port, String name) {
-        this.port = port;
-        this.name = name;
     }
 
     public String getName() {
@@ -35,5 +29,9 @@ public class Database {
 
     public void setPort(Integer port) {
         this.port = port;
+    }
+
+    public void connect() {
+        System.out.println("This is connect method");
     }
 }
