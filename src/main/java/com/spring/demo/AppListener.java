@@ -12,16 +12,19 @@ public class AppListener {
 
     @EventListener(ContextRefreshedEvent.class)
     public void onEvent(ContextRefreshedEvent event) {
+        System.out.println(Thread.currentThread().getId());
         System.out.println(event);
     }
 
     @EventListener(ContextStartedEvent.class)
     public void onEvent(ContextStartedEvent event) {
+        System.out.println(Thread.currentThread().getId());
         System.out.println(event);
     }
 
     @EventListener(CustomEvent.class)
     public void onEvent(CustomEvent event) {
+        System.out.println(Thread.currentThread().getId());
         System.out.println(event);
     }
 }

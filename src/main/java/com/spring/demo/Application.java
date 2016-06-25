@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
     public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getId());
         System.out.println("Hello World");
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("springIntermediateConfig.xml");
         ctx.start();
