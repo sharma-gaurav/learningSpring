@@ -19,4 +19,9 @@ public class AppListener {
     public void onEvent(ContextStartedEvent event) {
         System.out.println(event);
     }
+
+    @EventListener(CustomEvent.class)
+    public void onEvent(CustomEvent event) {
+        System.out.println(event);
+    }
 }

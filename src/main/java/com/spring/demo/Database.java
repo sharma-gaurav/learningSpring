@@ -1,11 +1,14 @@
 package com.spring.demo;
 
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Database {
+public class Database implements ApplicationEventPublisherAware {
     String name;
     Integer port;
+    ApplicationEventPublisher applicationEventPublisher;
 
     @Override
     public String toString() {
@@ -32,6 +35,14 @@ public class Database {
     }
 
     public void connect() {
+        CustomEvent customEvent = new CustomEvent(this);
+        applicationEventPublisher.publishEvent(customEvent);
+
         System.out.println("This is connect method");
+    }
+
+    @Override
+    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 }
