@@ -10,6 +10,7 @@ public class Application {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("springIntermediateConfig.xml");
         ctx.start();
         Database db = ctx.getBean(Database.class);
+        db.getPort();
         db.connect();
         System.out.println(db);
         ctx.stop();

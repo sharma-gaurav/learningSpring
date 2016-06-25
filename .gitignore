@@ -15,7 +15,6 @@ wrapper/
 dump.rdb
 .slcache/
 core
-*.class
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

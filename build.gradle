@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
 	compile "org.springframework:spring-context:4.2.5.RELEASE"
+	compile 'org.springframework:spring-aspects:4.2.5.RELEASE'
 }
 
 

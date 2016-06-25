@@ -35,8 +35,8 @@ public class Database implements ApplicationEventPublisherAware {
     }
 
     public void connect() {
-        CustomEvent customEvent = new CustomEvent(this);
-        applicationEventPublisher.publishEvent(customEvent);
+//        CustomEvent customEvent = new CustomEvent(this);
+//        applicationEventPublisher.publishEvent(customEvent);
 
         System.out.println("This is connect method");
     }
