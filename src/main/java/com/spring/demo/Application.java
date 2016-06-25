@@ -1,5 +1,7 @@
 package com.spring.demo;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.expression.Expression;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
@@ -21,5 +23,10 @@ public class Application {
         context.setVariable("b", 4);
         context.setVariable("c", 1);
         System.out.println(expression.getValue(context));
+
+
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("springIntermediateConfig.xml");
+        Dummy dummy = applicationContext.getBean(Dummy.class);
+        System.out.println(dummy);
     }
 }
