@@ -9,6 +9,30 @@ import java.util.Map;
 @Component
 public class Dummy {
 
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public List getList() {
+        return list;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
     @Value("#{'Dummy'}")
     String name;
 
@@ -26,6 +50,10 @@ public class Dummy {
 
     @Value("${state}")
     String state;
+
+    public static Integer getInteger() {
+        return 50;
+    }
 
     @Override
     public String toString() {

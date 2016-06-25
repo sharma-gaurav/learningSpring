@@ -24,10 +24,11 @@ public class MyAspect {
     }
 
     @Around("execution(Integer *())")
-    void aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    Object aroundAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         System.out.println("-------Around Before Execution-----");
-        proceedingJoinPoint.proceed();
+        Object value = proceedingJoinPoint.proceed();
         System.out.println("-------Around After Execution-----");
+        return value;
     }
 
     @AfterReturning(pointcut = "execution(Integer *())", returning = "retVal")

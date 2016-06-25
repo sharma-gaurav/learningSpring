@@ -26,7 +26,7 @@ public class Application {
 
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("springIntermediateConfig.xml");
-        Dummy dummy = applicationContext.getBean(Dummy.class);
-        System.out.println(dummy);
+        Dummy2 dummy2 = applicationContext.getBean(Dummy2.class);
+        System.out.println(dummy2);
     }
 }
