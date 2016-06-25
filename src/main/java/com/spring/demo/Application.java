@@ -13,5 +13,13 @@ public class Application {
         Expression expression = expressionParser.parseExpression("age");
         System.out.println(expression.getValue(person));
         System.out.println(expression.getValue(standardEvaluationContext));
+
+
+        StandardEvaluationContext context = new StandardEvaluationContext();
+        expression = expressionParser.parseExpression("(#a * #b)+#c");
+        context.setVariable("a", 2);
+        context.setVariable("b", 4);
+        context.setVariable("c", 1);
+        System.out.println(expression.getValue(context));
     }
 }
