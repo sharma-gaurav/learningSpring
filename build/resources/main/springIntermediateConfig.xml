@@ -13,4 +13,13 @@
         <property name="name" value="mysql"/>
         <property name="port" value="3306"/>
     </bean>
+
+    <bean id="simpleAsyncTaskExecutor"
+          class="org.springframework.core.task.SimpleAsyncTaskExecutor"/>
+
+
+    <bean id="applicationEventMulticaster"
+          class="org.springframework.context.event.SimpleApplicationEventMulticaster">
+        <property name="taskExecutor" ref="simpleAsyncTaskExecutor"/>
+    </bean>
 </beans>
