@@ -1,19 +1,17 @@
 package com.spring.demo;
 
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 
 public class Application {
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getId());
-        System.out.println("Hello World");
-        ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("springIntermediateConfig.xml");
-        ctx.start();
-        Database db = ctx.getBean(Database.class);
-        db.getPort();
-        db.connect();
-        System.out.println(db);
-        ctx.stop();
-        ctx.close();
+        Person person = new Person("Gaurav", 26);
+        StandardEvaluationContext standardEvaluationContext = new StandardEvaluationContext(person);
+        ExpressionParser expressionParser = new SpelExpressionParser();
+        Expression expression = expressionParser.parseExpression("age");
+        System.out.println(expression.getValue(person));
+        System.out.println(expression.getValue(standardEvaluationContext));
     }
 }
